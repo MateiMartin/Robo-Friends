@@ -38,7 +38,7 @@ class App extends React.Component {
         <SearchBox SearchChange={this.onSearchChange} />
         {filteredRobots.length === 0 ? (
           <div className="vh-100 flex flex-column justify-center items-center">
-            <h1 className="tc white ">
+            <h1 className="tc red f1">
               There are no robots with this name or email...
             </h1>
           </div>
