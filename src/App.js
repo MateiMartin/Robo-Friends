@@ -1,4 +1,3 @@
-"use strict";
 import React from "react";
 import { CardList } from "./cardList.js";
 import { SearchBox } from "./searchBox.js";
