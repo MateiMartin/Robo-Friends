@@ -1,4 +1,5 @@
 import React from "react";
+
 const Scroll = (props) => {
   return (
     <div
@@ -11,4 +12,5 @@ const Scroll = (props) => {
     </div>
   );
 };
+
 export { Scroll };

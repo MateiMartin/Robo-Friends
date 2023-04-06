@@ -15,7 +15,7 @@ const CardList = (props) => {
     );
   });
 
-  return <div className="grid centre tc">{cardArr};</div>;
+  return <div className="grid centre tc">{cardArr}</div>;
 };
 
 export { CardList };
