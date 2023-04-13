@@ -1,21 +1,18 @@
 import React from "react";
 import { CardList } from "../components/cardList.js";
 import { SearchBox } from "../components/searchBox.js";
-//import { robots } from "./robotsNames.js";
+import { robots } from "../components/robotsNames.js";
 import { Scroll } from "../components/scroll.js";
+import { PlusSign } from "../components/robotAdd/addCard.js";
+import { ErrorBoundary } from "../components/componentEror.js";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      robots: [],
+      robots: robots,
       searchField: "",
     };
-  }
-  componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((users) => this.setState({ robots: users }));
   }
 
   onSearchChange = (event) => {
@@ -42,7 +39,7 @@ class App extends React.Component {
     } else
       return (
         <div>
-          <h1 className="tc green f1">RoboFriends</h1>
+          <h1 className="tc green f1">RoboFriends </h1>
           <SearchBox SearchChange={this.onSearchChange} />
           {filteredRobots.length === 0 ? (
             <div className="vh-100 flex flex-column justify-center items-center">
@@ -52,10 +49,13 @@ class App extends React.Component {
             </div>
           ) : (
             <Scroll>
-              <CardList
-                robots={filteredRobots}
-                search={this.state.searchField}
-              />
+              <ErrorBoundary>
+                <CardList
+                  robots={filteredRobots}
+                  search={this.state.searchField}
+                />
+                <PlusSign />
+              </ErrorBoundary>
             </Scroll>
           )}
         </div>
