@@ -13,7 +13,7 @@ class App extends React.Component {
     this.state = {
       robots: robots,
       searchField: "",
-      cliked: false,
+      clicked: false,
     };
   }
 
@@ -56,13 +56,13 @@ class App extends React.Component {
                     robots={filteredRobots}
                     search={this.state.searchField}
                   />
-                  <PlusSign cliked={this.state.cliked} />
+                  <PlusSign setClicked={() => this.setState({ clicked: !this.state.clicked })} />
                 </ErrorBoundary>
               </Scroll>
             )}
           </div>
 
-          <Popup cliked={this.state.cliked} />
+          <Popup clicked={this.state.clicked} />
         </>
 
       );

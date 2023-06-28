@@ -3,7 +3,8 @@ import "./addCard.css";
 
 
 
-const PlusSign = ({ cliked }) => {
+
+const PlusSign = ({setClicked }) => {
   return (
     <svg
       width="188"
@@ -11,10 +12,7 @@ const PlusSign = ({ cliked }) => {
       viewBox="0 0 188 185"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      onClick={() => {
-        cliked = !cliked
-        console.log(cliked);
-      }}
+      onClick={setClicked}
     >
       <rect width="188" height="185" fill="#455044" />
       <g id="plus" filter="url(#filter0_d_1_2)">
