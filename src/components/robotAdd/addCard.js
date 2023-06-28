@@ -1,14 +1,9 @@
 import React from "react";
 import "./addCard.css";
 
-const newCard = () => {
-  return (
-    <div className="bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5 new-card"></div>
-    //...and so on
-  );
-};
 
-const PlusSign = () => {
+
+const PlusSign = ({ cliked }) => {
   return (
     <svg
       width="188"
@@ -16,7 +11,10 @@ const PlusSign = () => {
       viewBox="0 0 188 185"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      onClick={newCard}
+      onClick={() => {
+        cliked = !cliked
+        console.log(cliked);
+      }}
     >
       <rect width="188" height="185" fill="#455044" />
       <g id="plus" filter="url(#filter0_d_1_2)">
@@ -69,7 +67,7 @@ const PlusSign = () => {
           />
         </filter>
       </defs>
-    </svg>
+    </svg >
   );
 };
 
