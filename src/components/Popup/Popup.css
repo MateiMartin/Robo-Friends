@@ -3,6 +3,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 400px;
+    /* height: 300px; */
     width: 300px;
+    transition: transform 0.3s linear;
+}
+
+.poza{
+    position: relative;
+    left: 50px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
 }
