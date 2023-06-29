@@ -32,6 +32,14 @@ class App extends React.Component {
     });
     return filteredRobots;
   }
+
+  isBlur(){
+    if(this.state.clicked){
+      return "blur(10px)"
+    }
+    return "blur(0px)"
+  }
+
   render() {
     const filteredRobots = this.filterRobots();
 
@@ -40,7 +48,7 @@ class App extends React.Component {
     } else
       return (
         <>
-          <div>
+          <div style={{filter: this.isBlur()}}>
             <h1 className="tc green f1">RoboFriends </h1>
             <SearchBox SearchChange={this.onSearchChange} />
             {filteredRobots.length === 0 ? (
