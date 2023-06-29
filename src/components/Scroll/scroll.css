@@ -1,0 +1,14 @@
+.scroll-container {
+    overflow-y: scroll;
+    height: 800px;
+  }
+  
+  /* Hide the scrollbar */
+  .scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* For Firefox */
+  .scroll-container {
+    scrollbar-width: none;
+  }
