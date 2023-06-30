@@ -33,8 +33,8 @@ class App extends React.Component {
     return filteredRobots;
   }
 
-  isBlur(){
-    if(this.state.clicked){
+  isBlur() {
+    if (this.state.clicked) {
       return "blur(10px)"
     }
     return "blur(0px)"
@@ -48,7 +48,7 @@ class App extends React.Component {
     } else
       return (
         <>
-          <div style={{filter: this.isBlur()}}>
+          <div style={{ filter: this.isBlur() }}>
             <h1 className="tc green f1">RoboFriends </h1>
             <SearchBox SearchChange={this.onSearchChange} />
             {filteredRobots.length === 0 ? (
@@ -70,7 +70,7 @@ class App extends React.Component {
             )}
           </div>
 
-          <Popup clicked={this.state.clicked} />
+          <Popup clicked={this.state.clicked} setClicked={() => this.setState({ clicked: !this.state.clicked })} robotAdd={(robot) => this.setState({ robots: [...this.state.robots, robot] })} />
         </>
 
       );
