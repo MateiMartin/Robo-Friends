@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./Popup.css";
+import { x } from "./close-outline.js"
 
 const Popup = ({ clicked }) => {
     const [id, setId] = useState('');
@@ -12,8 +13,9 @@ const Popup = ({ clicked }) => {
     return (
         <>
             {clicked && (
-                <div className="Popup bg-light-green dib br3 pa3 ma2 bw2 shadow-5 flex flex-column" style={{height:height}}>
-                    {id && <img src={`https://robohash.org/${id}`} className="poza" alt="robot"/>}
+                <div className="Popup bg-light-green dib br3 pa3 ma2 bw2 shadow-5 flex flex-column" style={{ height: height }}>
+                    {x}
+                    {id && <img src={`https://robohash.org/${id}`} className="poza" alt="robot" />}
                     <div className="tc">
                         <div className="flex justify-center flex-column">
                             <input type="number" placeholder="Id..." className="mt2 w-150 h2 f6" onChange={(e) => setId(e.target.value)} />
