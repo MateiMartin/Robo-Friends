@@ -32,7 +32,11 @@ const Popup = ({ clicked, setClicked, robotAdd }) => {
         <>
             {clicked && (
                 <div className="Popup bg-light-green dib br3 pa3 ma2 bw2 shadow-5 flex flex-column" style={{ height: height }}>
-                    <div onClick={setClicked}>{x}</div>
+                    <div onClick={() => {
+                        setClicked(); setId(''); setName(''); setEmail('')
+                    }}>
+                        {x}
+                    </div>
                     {id && <img src={`https://robohash.org/${id}`} className="poza" alt="robot" />}
                     <div className="tc">
                         <div className="flex justify-center flex-column">
